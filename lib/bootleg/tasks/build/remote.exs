@@ -46,10 +46,10 @@ task :compile do
   UI.info("Building on remote server with mix env #{mix_env}...")
 
   remote :build, cd: source_path do
-    "MIX_ENV=#{mix_env} mix local.rebar --force"
-    "MIX_ENV=#{mix_env} mix local.hex --if-missing --force"
-    "MIX_ENV=#{mix_env} mix deps.get --only=#{mix_env}"
-    "MIX_ENV=#{mix_env} mix do clean, compile --force"
+    "[ -f ~/.profile ] && source ~/.profile && MIX_ENV=#{mix_env} mix local.rebar --force"
+    "[ -f ~/.profile ] && source ~/.profile && MIX_ENV=#{mix_env} mix local.hex --if-missing --force"
+    "[ -f ~/.profile ] && source ~/.profile && MIX_ENV=#{mix_env} mix deps.get --only=#{mix_env}"
+    "[ -f ~/.profile ] && source ~/.profile && MIX_ENV=#{mix_env} mix do clean, compile --force"
   end
 end
 
