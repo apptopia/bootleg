@@ -41,7 +41,7 @@ defmodule Bootleg.Mixfile do
   defp deps do
     [
       {:sshkit, "0.3.0"},
-      {:ssh_client_key_api, git: "https://github.com/apptopia/elixir-ssh_client_key_api.git"},
+      {:ssh_client_key_api, git: "https://github.com/apptopia/elixir-ssh_client_key_api.git", branch: "axelson-OTP25-fix"},
       {:credo, "~> 0.10", only: [:dev, :test]},
       {:dialyxir, "~> 1.0.0-rc.3", only: [:dev], runtime: false},
       {:ex_doc, "~> 0.18", only: [:docs], runtime: false},
